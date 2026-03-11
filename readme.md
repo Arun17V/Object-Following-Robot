@@ -1,35 +1,30 @@
 # 🤖 Autonomous Object-Following Robot
 
-## 🎓 Educational Focus & Core Competencies
-[cite_start]This project was developed as an alternative assessment for the Robotics and Automation coursework[cite: 2, 12]. [cite_start]It serves as a practical implementation of autonomous systems, focusing on real-time data processing, sensor integration, and the application of control algorithms in physical hardware[cite: 89, 90, 92].
-
----
+## 🎓 Educational Focus
+[cite_start]This project was developed as a core academic requirement for the Robotics and Automation curriculum[cite: 12, 18]. [cite_start]It serves as a practical implementation of computer science and mechanical principles, bridging the gap between theoretical programming and real-world hardware integration[cite: 149, 221]. [cite_start]The primary educational objective is to master real-time data processing, sensor integration, and autonomous control algorithms[cite: 89, 90, 92].
 
 ## 🌟 Project Overview
-[cite_start]This repository contains the architecture and logic for an autonomous system designed to track and follow a moving object with minimal human intervention[cite: 72]. [cite_start]The robot utilizes a combination of sensors and a microcontroller to process real-time data, making dynamic decisions to maintain a consistent distance from its target[cite: 63, 64]. [cite_start]This foundational technology has critical applications in logistics, assistive technologies, and automated surveillance[cite: 67, 383].
+[cite_start]This repository contains the architecture and software logic for an autonomous robotics system[cite: 62]. [cite_start]Designed to track and shadow a moving target, the robot operates with minimal human intervention by utilizing a continuous feedback loop[cite: 72, 342]. [cite_start]It processes real-time spatial data to dynamically adjust its speed and trajectory, ensuring a consistent distance from the target[cite: 64, 65].
 
 ## ✨ Key Features
-* [cite_start]**Real-Time Autonomous Tracking**: Dynamically adjusts its movement to maintain a constant distance from the object while accurately following its path[cite: 91].
-* [cite_start]**Data Processing**: Processes sensor data in real-time, enabling quick decisions regarding speed and direction adjustments[cite: 93].
-* [cite_start]**Continuous Feedback Loop**: Makes continuous adjustments and small corrections to its movement to stay aligned with the target[cite: 361, 364].
+* [cite_start]**Real-Time Tracking**: Dynamically adjusts motor velocity and direction to maintain a constant distance from a moving target[cite: 91].
+* [cite_start]**Continuous Feedback Control**: Utilizes a closed-loop system to make instant path corrections based on live environmental data[cite: 342, 361].
+* [cite_start]**Obstacle & Boundary Detection**: Processes multi-sensor inputs to establish spatial awareness and object proximity[cite: 89].
 
 ## 🛠️ Hardware Architecture
-The hardware stack is designed for optimal responsiveness and reliable object tracking:
-* [cite_start]**Central Processing Unit**: Arduino Uno featuring an ATmega328 microcontroller, responsible for running control algorithms and processing sensor inputs[cite: 149, 151].
-* [cite_start]**Kinetic Drive**: Four DC Motors [cite: 146] [cite_start]driven by an L298N Dual H-Bridge motor driver, which supports up to 2A per motor for responsive speed and direction control[cite: 161, 165].
+* [cite_start]**Microcontroller**: Arduino Uno (ATmega328), functioning as the core processor for algorithm execution and hardware control[cite: 149, 151].
+* [cite_start]**Kinetic Drive System**: A 4-wheel drive mechanism powered by DC Motors and regulated by an L298N Dual H-Bridge motor driver[cite: 146, 161, 165].
 * **Sensory Array**:
-    * [cite_start]**HC-SR04 Ultrasonic Sensor**: Measures distance (ranging from 2 cm to 400 cm) by emitting sound waves and calculating the return time[cite: 168, 169, 171].
-    * [cite_start]**Infrared (IR) Sensors**: Detect obstacles and assist in tracking object movement[cite: 175, 176].
-* [cite_start]**Power Management**: Powered by a rechargeable Li-ion/Li-poly battery pack (7.4V or 12V) with a voltage regulator (e.g., LM7805) to ensure stable 5V logic processing[cite: 197, 202, 208, 210].
+    * [cite_start]**Ultrasonic Sensor (HC-SR04)**: Provides millimeter-accurate distance measurements (2 cm to 400 cm) via acoustic wave timing[cite: 168, 171].
+    * [cite_start]**Dual Infrared (IR) Sensors**: Facilitate close-range detection and secondary tracking inputs[cite: 175, 176].
+* [cite_start]**Power Management**: Sustained by a high-capacity rechargeable battery pack with onboard voltage regulation for logic stability[cite: 197, 208].
 
-## 🧠 System Logic & Working Principle
-[cite_start]The robot operates on a principle of continuous feedback control[cite: 342]:
-1.  [cite_start]**Detection**: The ultrasonic sensor emits a pulse of sound waves and measures the time it takes to reflect back, converting this into a precise distance measurement[cite: 347, 348].
-2.  [cite_start]**Processing**: The Arduino processes these readings to determine if the robot is too close, too far, or at the optimal setpoint[cite: 352, 353].
-3.  [cite_start]**Execution**: Control signals are amplified by the L298N driver; if the target moves farther away, the robot accelerates forward[cite: 356, 357]. [cite_start]Left and right motors are controlled individually to execute turns and maintain trajectory[cite: 359].
+## 🧠 Working Principle
+1.  [cite_start]**Polling**: The HC-SR04 sensor pulses sound waves, calculating the time-of-flight of the echo to determine the exact distance to the object[cite: 347, 348].
+2.  [cite_start]**Logic Processing**: The microcontroller evaluates this distance against a programmed setpoint, determining if the robot needs to advance, halt, or pivot[cite: 353].
+3.  **Actuation**: The L298N driver amplifies the Arduino's control signals to the DC motors. [cite_start]Differential steering is applied to the left and right wheels to execute smooth turns and trajectory adjustments[cite: 356, 359].
 
 ## 🚀 Future Enhancements
-The system's modular nature allows for several advanced upgrades:
-* [cite_start]**Advanced Object Recognition**: Integrating LiDAR or cameras coupled with AI algorithms to improve detection accuracy[cite: 465].
-* [cite_start]**Multi-Object Tracking**: Expanding functionality to follow multiple objects simultaneously in complex environments[cite: 466].
-* [cite_start]**Autonomous Navigation**: Implementing path-planning algorithms to seamlessly navigate around obstacles while maintaining focus on the primary target[cite: 467].
+* [cite_start]**Computer Vision Integration**: Upgrading to camera-based tracking and AI object recognition to identify specific targets based on features like color or shape[cite: 455, 465].
+* [cite_start]**Multi-Object Capabilities**: Enhancing algorithms to track and manage multiple dynamic objects simultaneously[cite: 466].
+* [cite_start]**Path Planning**: Implementing advanced autonomous navigation to predict movements and seamlessly route around static obstacles[cite: 467].
